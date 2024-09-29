@@ -29,7 +29,8 @@ func main() {
 
 	// Publish a message
 	result := topic.Publish(ctx, &pubsub.Message{
-		Data: []byte("Hello, World!"),
+		Data:       []byte("Hello, World!"),
+		Attributes: map[string]string{"sub": "1"},
 	})
 
 	// Get the result of the publish call
